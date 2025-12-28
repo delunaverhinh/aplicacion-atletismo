@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Registrar carrera</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/">Entrenamientos</a>
+      <div class="ms-auto">
+        <a href="/panel" class="btn btn-light btn-sm">Panel</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container py-4">
+    <h2 class="h4 mb-4">Registrar nueva carrera</h2>
+
+    <form method="POST" action="/nueva_carrera" enctype="multipart/form-data" class="row g-3">
+      <div class="col-md-4">
+        <label for="usuario_id" class="form-label">ID del atleta</label>
+        <input type="number" id="usuario_id" name="usuario_id" class="form-control" required />
+      </div>
+
+      <div class="col-md-4">
+        <label for="fecha" class="form-label">Fecha</label>
+        <input type="date" id="fecha" name="fecha" class="form-control" required />
+      </div>
+
+      <div class="col-md-4">
+        <label for="distancia" class="form-label">Distancia (km)</label>
+        <input type="number" step="0.1" id="distancia" name="distancia" class="form-control" required />
+      </div>
+
+      <div class="col-md-4">
+        <label for="duracion" class="form-label">Duración (min:seg)</label>
+        <input type="text" id="duracion" name="duracion" class="form-control" placeholder="Ej. 50:30" required />
+      </div>
+
+      <div class="col-md-8">
+        <label for="notas" class="form-label">Notas</label>
+        <textarea id="notas" name="notas" class="form-control" rows="2"></textarea>
+      </div>
+
+      <div class="col-md-8">
+        <label for="imagen" class="form-label">Imagen del entrenamiento</label>
+        <input type="file" id="imagen" name="imagen" class="form-control" accept="image/*" />
+      </div>
+
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary">Guardar carrera</button>
+      </div>
+    </form>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
